@@ -1,0 +1,16 @@
+{
+  "values": [
+    "window_box:floating_snapdresson",
+    "window_box:floating_candysnuft",
+    "window_box:floating_queen_anelace",
+    "window_box:floating_groundberry",
+    "window_box:floating_oxidaisel",
+    "window_box:floating_glory_incarnata",
+    "window_box:floating_witch_pupil",
+    "window_box:floating_dispelagonium",
+    {
+      "id": "window_box:floating_topsy_tulip",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "botania:petal_apothecary",
+  "output": { "item": "window_box:witch_pupil" },
+  "ingredients": [
+    { "tag": "botania:petals/red" },
+    { "tag": "botania:petals/red" },
+    { "tag": "botania:petals/red" },
+    { "item": "minecraft:spider_eye" },
+    { "item": "botania:rune_winter" }],
+  "reagent": { "tag": "botania:seed_apothecary_reagent" }
+}

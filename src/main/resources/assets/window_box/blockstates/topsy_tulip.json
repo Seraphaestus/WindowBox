@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=up": {
+      "model": "window_box:block/topsy_tulip"
+    },
+    "facing=down": {
+      "model": "window_box:block/topsy_tulip",
+      "x": 180
+    },
+    "facing=north": {
+      "model": "window_box:block/topsy_tulip",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "window_box:block/topsy_tulip",
+      "x": 90, "y": 180
+    },
+    "facing=east": {
+      "model": "window_box:block/topsy_tulip",
+      "x": 90, "y": 90
+    },
+    "facing=west": {
+      "model": "window_box:block/topsy_tulip",
+      "x": 90, "y": 270
+    }
+  }
+}

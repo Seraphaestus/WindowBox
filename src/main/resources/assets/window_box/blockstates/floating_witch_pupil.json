@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "eyes=8": { "model": "window_box:block/floating_witch_pupil/8" },
+    "eyes=7": { "model": "window_box:block/floating_witch_pupil/7" },
+    "eyes=6": { "model": "window_box:block/floating_witch_pupil/6" },
+    "eyes=5": { "model": "window_box:block/floating_witch_pupil/5" },
+    "eyes=4": { "model": "window_box:block/floating_witch_pupil/4" },
+    "eyes=3": { "model": "window_box:block/floating_witch_pupil/3" },
+    "eyes=2": { "model": "window_box:block/floating_witch_pupil/2" },
+    "eyes=1": { "model": "window_box:block/floating_witch_pupil/1" }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "botania:petal_apothecary",
+  "output": { "item": "window_box:dispelagonium" },
+  "ingredients": [
+    { "tag": "botania:petals/magenta" },
+    { "tag": "botania:petals/magenta" },
+    { "tag": "botania:petals/orange" },
+    { "tag": "botania:petals/lime" },
+    { "item": "botania:rune_winter" },
+    { "item": "botania:pixie_dust" }],
+  "reagent": { "tag": "botania:seed_apothecary_reagent" }
+}

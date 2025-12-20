@@ -1,0 +1,57 @@
+{
+  "name": "window_box.entry.chthonic_yew",
+  "category": "botania:functional_flowers",
+  "icon": "window_box:chthonic_yew_sapling",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "window_box.page.chthonic_yew0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "recipe": "window_box:petal_apothecary/chthonic_yew_sapling",
+      "text": "window_box.page.chthonic_yew1"
+    },
+    {
+      "type": "window_box:multiblock",
+      "name": "window_box.page.sapling.multiblock",
+      "text": "window_box.page.sapling.facing",
+      "multiblock": {
+        "mapping": {
+          "#": "window_box:outline_block",
+          "0": "window_box:chthonic_yew_sapling",
+          "S": "window_box:chthonic_yew_sapling"
+        },
+        "pattern": [
+          [
+            "      ",
+            "      ",
+            "  0S  ",
+            "  SS  ",
+            "      ",
+            "      "
+          ],
+          [
+            "#    #",
+            " ## ##",
+            " #### ",
+            "##### ",
+            " ## # ",
+            " #   #"
+          ]
+        ]
+      },
+      "rotate": -135,
+      "scale": 1.4,
+      "offset_y": -1.5
+    }
+  ],
+  "extra_recipe_mappings": {
+    "window_box:chthonic_yew_leaves": 1,
+    "window_box:chthonic_yew_log": 1,
+    "window_box:chthonic_yew_wood": 1,
+    "window_box:chthonic_yew_wood_stairs": 1,
+    "window_box:chthonic_yew_wood_slab": 1
+  }
+}

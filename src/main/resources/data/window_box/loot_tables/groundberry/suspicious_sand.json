@@ -1,0 +1,10 @@
+{
+  "pools": [ {
+    "entries": [
+      { "type": "minecraft:loot_table", "name": "minecraft:archaeology/desert_pyramid" },
+      { "type": "minecraft:loot_table", "name": "minecraft:archaeology/desert_well" },
+      { "type": "minecraft:loot_table", "name": "minecraft:archaeology/ocean_ruin_warm" }
+    ],
+    "rolls": 1
+  }]
+}

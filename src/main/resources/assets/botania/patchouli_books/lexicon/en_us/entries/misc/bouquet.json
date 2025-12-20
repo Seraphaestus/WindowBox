@@ -1,0 +1,17 @@
+{
+  "name": "window_box.entry.bouquet",
+  "category": "botania:misc",
+  "icon": "window_box:bouquet{Items:[{id:'botania:yellow_shiny_flower',Count:1b}, {id:'botania:pink_shiny_flower',Count:1b}, {id:'botania:light_blue_shiny_flower',Count:1b}]}",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "window_box.page.bouquet0"
+    },
+    {
+      "type": "crafting",
+      "recipe": "window_box:bouquet",
+      "text": "window_box.page.bouquet1"
+    }
+  ]
+}

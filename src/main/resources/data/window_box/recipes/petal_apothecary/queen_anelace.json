@@ -1,0 +1,12 @@
+{
+  "type": "botania:petal_apothecary",
+  "output": { "item": "window_box:queen_anelace" },
+  "ingredients": [
+    { "tag": "botania:petals/red" },
+    { "tag": "botania:petals/red" },
+    { "tag": "botania:petals/white" },
+    { "tag": "botania:petals/orange" },
+    { "item": "botania:rune_earth" },
+    { "item": "botania:rune_greed" }],
+  "reagent": { "tag": "botania:seed_apothecary_reagent" }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "window_box.entry.dispelagonium",
+  "category": "botania:functional_flowers",
+  "icon": "window_box:dispelagonium",
+  "entry_color": "aa00",
+  "advancement": "botania:main/elf_lexicon_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "window_box.page.dispelagonium0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "recipe": "window_box:petal_apothecary/dispelagonium",
+      "text": "window_box.page.dispelagonium1"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "window_box:floating_dispelagonium": 1
+  }
+}

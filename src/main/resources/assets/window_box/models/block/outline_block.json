@@ -1,0 +1,15 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "top": "window_box:block/outline_block"
+  },
+  "elements": [
+    {
+      "from": [ 0, 16, 0 ],
+      "to": [ 16, 16, 16 ],
+      "faces": {
+        "up":    { "texture": "#top", "cullface": "up" }
+      }
+    }
+  ]
+}

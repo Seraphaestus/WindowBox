@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "window_box:block/chthonic_yew/log",
+    "side": "window_box:block/chthonic_yew/log",
+    "top": "window_box:block/chthonic_yew/log"
+  }
+}

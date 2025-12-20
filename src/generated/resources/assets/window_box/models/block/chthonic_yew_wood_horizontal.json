@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "window_box:block/chthonic_yew/log",
+    "side": "window_box:block/chthonic_yew/log"
+  }
+}

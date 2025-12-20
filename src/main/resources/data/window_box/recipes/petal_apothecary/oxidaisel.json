@@ -1,0 +1,13 @@
+{
+  "type": "botania:petal_apothecary",
+  "output": { "item": "window_box:oxidaisel" },
+  "ingredients": [
+    { "tag": "botania:petals/cyan" },
+    { "tag": "botania:petals/cyan" },
+    { "tag": "botania:petals/orange" },
+    { "tag": "botania:petals/white" },
+    { "tag": "botania:petals/white" },
+    { "item": "botania:rune_water" },
+    { "item": "botania:rune_air" }],
+  "reagent": { "tag": "botania:seed_apothecary_reagent" }
+}

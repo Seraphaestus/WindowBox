@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "window_box:block/alfthorne/log",
+    "side": "window_box:block/alfthorne/log",
+    "top": "window_box:block/alfthorne/log"
+  }
+}

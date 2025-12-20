@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "window_box:topsy_tulip",
+      "required": false
+    },
+    {
+      "id": "window_box:floating_topsy_tulip",
+      "required": false
+    }
+  ]
+}

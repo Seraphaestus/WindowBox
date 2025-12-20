@@ -1,0 +1,13 @@
+{
+  "type": "botania:petal_apothecary",
+  "output": { "item": "window_box:chthonic_yew_sapling" },
+  "ingredients": [
+    { "item": "minecraft:dead_bush" },
+    { "tag": "botania:petals/lime" },
+    { "tag": "botania:petals/white" },
+    { "item": "botania:livingwood_twig"  },
+    { "item": "botania:livingwood_twig"  },
+    { "item": "minecraft:obsidian" }
+  ],
+  "reagent": { "tag": "botania:seed_apothecary_reagent" }
+}

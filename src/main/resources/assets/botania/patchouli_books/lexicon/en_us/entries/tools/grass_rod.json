@@ -1,0 +1,18 @@
+{
+  "name": "window_box.entry.grass_rod",
+  "category": "botania:tools",
+  "icon": "window_box:grass_rod",
+  "entry_color": "aa00",
+  "advancement": "botania:main/elf_lexicon_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "window_box.page.grass_rod0"
+    },
+    {
+      "type": "crafting",
+      "recipe": "window_box:grass_rod",
+      "text": "window_box.page.grass_rod1"
+    }
+  ]
+}

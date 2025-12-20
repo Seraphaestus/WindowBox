@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": { "item": "minecraft:target" },
+    "R": { "item": "botania:rune_water" },
+    "S": { "item": "botania:livingwood_twig" }
+  },
+  "pattern": [
+    "  I",
+    " R ",
+    "S  "
+  ],
+  "result": { "item": "window_box:state_changer_rod" },
+  "show_notification": true
+}

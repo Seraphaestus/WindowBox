@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "hanging_sign",
+  "key": {
+    "L": {
+      "item": "window_box:stripped_chthonic_yew_log"
+    },
+    "X": {
+      "item": "minecraft:chain"
+    }
+  },
+  "pattern": [
+    "X X",
+    "LLL",
+    "LLL"
+  ],
+  "result": {
+    "count": 6,
+    "item": "window_box:chthonic_yew_hanging_sign"
+  },
+  "show_notification": true
+}

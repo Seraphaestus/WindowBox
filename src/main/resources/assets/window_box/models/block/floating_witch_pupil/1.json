@@ -1,0 +1,5 @@
+{
+  "loader": "botania:floating_flower",
+  "parent": "minecraft:block/block",
+  "flower": { "parent": "window_box:block/witch_pupil/1" }
+}

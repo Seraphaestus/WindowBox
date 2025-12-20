@@ -1,0 +1,7 @@
+{
+  "values": [
+    "#minecraft:fences",
+    "#forge:glass_panes",
+    { "id": "#c:glass_panes", "required": false }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "flag": "mod:gravityapi",
+  "name": "window_box.entry.topsy_tulip",
+  "category": "botania:functional_flowers",
+  "icon": "window_box:topsy_tulip",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "window_box.page.topsy_tulip0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "recipe": "window_box:petal_apothecary/topsy_tulip",
+      "text": "window_box.page.topsy_tulip1"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "window_box:floating_topsy_tulip": 1
+  }
+}

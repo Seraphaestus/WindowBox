@@ -1,0 +1,42 @@
+{
+  "name": "window_box.entry.candysnuft",
+  "category": "botania:generating_flowers",
+  "icon": "window_box:candysnuft",
+  "advancement": "botania:main/runic_altar_pickup",
+  "pages": [
+    {
+      "type": "text",
+      "text": "window_box.page.candysnuft0"
+    },
+    {
+      "type": "text",
+      "text": "window_box.page.candysnuft1"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "recipe": "window_box:petal_apothecary/candysnuft",
+      "text": "window_box.page.candysnuft2"
+    }
+  ],
+  "extra_recipe_mappings": {
+    "window_box:floating_candysnuft": 1,
+    "minecraft:candle": 1,
+
+    "minecraft:white_candle": 1,
+    "minecraft:light_gray_candle": 1,
+    "minecraft:gray_candle": 1,
+    "minecraft:black_candle": 1,
+    "minecraft:red_candle": 1,
+    "minecraft:orange_candle": 1,
+    "minecraft:yellow_candle": 1,
+    "minecraft:lime_candle": 1,
+    "minecraft:green_candle": 1,
+    "minecraft:cyan_candle": 1,
+    "minecraft:light_blue_candle": 1,
+    "minecraft:blue_candle": 1,
+    "minecraft:purple_candle": 1,
+    "minecraft:magenta_candle": 1,
+    "minecraft:pink_candle": 1,
+    "minecraft:brown_candle": 1
+  }
+}

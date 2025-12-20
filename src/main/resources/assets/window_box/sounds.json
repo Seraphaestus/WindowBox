@@ -1,0 +1,43 @@
+{
+  "snapdresson_save": {
+    "subtitle": "window_box.subtitle.snapdresson.save",
+    "sounds": [{ "type": "event", "name": "botania:ding" }]
+  },
+  "snapdresson_load": {
+    "subtitle": "window_box.subtitle.snapdresson.load",
+    "sounds": [{ "type": "event", "name": "minecraft:entity.ender_dragon.flap", "pitch": 2.0 }]
+  },
+
+  "witch_pupil_pluck": {
+    "subtitle": "window_box.subtitle.witch_pupil.pluck",
+    "sounds": [{ "type": "event", "name": "minecraft:entity.item_frame.remove_item" }]
+  },
+  "witch_pupil_switch": {
+    "subtitle": "window_box.subtitle.witch_pupil.switch",
+    "sounds": [{ "type": "event", "name": "minecraft:block.sweet_berry_bush.pick_berries", "pitch": 0.8 }]
+  },
+
+  "candysnuft_generate": {
+    "subtitle": "window_box.subtitle.candysnuft.generate",
+    "sounds": [{ "type": "event", "name": "botania:thermalily" }]
+  },
+
+  "queen_anelace_generate": {
+    "subtitle": "window_box.subtitle.queen_anelace.generate",
+    "sounds": [{ "type": "event", "name": "botania:thermalily" }]
+  },
+  "queen_anelace_fail": {
+    "subtitle": "window_box.subtitle.queen_anelace.fail",
+    "sounds": [{ "type": "event", "name": "minecraft:block.glass.break", "pitch": 0.01 }]
+  },
+
+  "grow_chthonic_yew": {
+    "subtitle": "window_box.subtitle.chthonic_yew_sapling.grow",
+    "sounds": [{ "type": "event", "name": "minecraft:block.sculk_catalyst.bloom", "volume": 2.0 }]
+  },
+
+  "grow_alfthorne": {
+    "subtitle": "window_box.subtitle.alfthorne_sapling.grow",
+    "sounds": [{ "type": "event", "name": "minecraft:ui.toast.challenge_complete", "pitch": 0.5 }]
+  }
+}

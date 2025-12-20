@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "window_box:block/chthonic_yew/door_bottom",
+    "top": "window_box:block/chthonic_yew/door_top"
+  }
+}

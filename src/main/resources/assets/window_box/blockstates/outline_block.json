@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "window_box:block/outline_block" }
+  }
+}

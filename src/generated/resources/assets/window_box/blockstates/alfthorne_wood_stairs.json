@@ -1,0 +1,414 @@
+{
+  "variants": {
+    "facing=east,half=bottom,persistent=false,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,half=bottom,persistent=false,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner"
+    },
+    "facing=east,half=bottom,persistent=false,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,half=bottom,persistent=false,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer"
+    },
+    "facing=east,half=bottom,persistent=false,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs"
+    },
+    "facing=east,half=bottom,persistent=true,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,half=bottom,persistent=true,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner"
+    },
+    "facing=east,half=bottom,persistent=true,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=east,half=bottom,persistent=true,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer"
+    },
+    "facing=east,half=bottom,persistent=true,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs"
+    },
+    "facing=east,half=top,persistent=false,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,half=top,persistent=false,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,half=top,persistent=false,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,half=top,persistent=false,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,half=top,persistent=false,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,half=top,persistent=true,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,half=top,persistent=true,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,half=top,persistent=true,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=east,half=top,persistent=true,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=east,half=top,persistent=true,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,half=bottom,persistent=false,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,half=bottom,persistent=false,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,half=bottom,persistent=false,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,half=bottom,persistent=false,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,half=bottom,persistent=false,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,half=bottom,persistent=true,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,half=bottom,persistent=true,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,half=bottom,persistent=true,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=north,half=bottom,persistent=true,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,half=bottom,persistent=true,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "y": 270
+    },
+    "facing=north,half=top,persistent=false,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,half=top,persistent=false,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,half=top,persistent=false,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,half=top,persistent=false,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,half=top,persistent=false,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,half=top,persistent=true,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,half=top,persistent=true,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,half=top,persistent=true,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=north,half=top,persistent=true,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180
+    },
+    "facing=north,half=top,persistent=true,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=south,half=bottom,persistent=false,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner"
+    },
+    "facing=south,half=bottom,persistent=false,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,half=bottom,persistent=false,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer"
+    },
+    "facing=south,half=bottom,persistent=false,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,half=bottom,persistent=false,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,half=bottom,persistent=true,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner"
+    },
+    "facing=south,half=bottom,persistent=true,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,half=bottom,persistent=true,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer"
+    },
+    "facing=south,half=bottom,persistent=true,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,half=bottom,persistent=true,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=south,half=top,persistent=false,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,half=top,persistent=false,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,half=top,persistent=false,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,half=top,persistent=false,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,half=top,persistent=false,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,half=top,persistent=true,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,half=top,persistent=true,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,half=top,persistent=true,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=south,half=top,persistent=true,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=south,half=top,persistent=true,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 90
+    },
+    "facing=west,half=bottom,persistent=false,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,half=bottom,persistent=false,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,half=bottom,persistent=false,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,half=bottom,persistent=false,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,half=bottom,persistent=false,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,half=bottom,persistent=true,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,half=bottom,persistent=true,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,half=bottom,persistent=true,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "y": 90
+    },
+    "facing=west,half=bottom,persistent=true,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,half=bottom,persistent=true,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "y": 180
+    },
+    "facing=west,half=top,persistent=false,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,half=top,persistent=false,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,half=top,persistent=false,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,half=top,persistent=false,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,half=top,persistent=false,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,half=top,persistent=true,shape=inner_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,half=top,persistent=true,shape=inner_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_inner",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,half=top,persistent=true,shape=outer_left": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    },
+    "facing=west,half=top,persistent=true,shape=outer_right": {
+      "model": "window_box:block/alfthorne_wood_stairs_outer",
+      "uvlock": true,
+      "x": 180,
+      "y": 270
+    },
+    "facing=west,half=top,persistent=true,shape=straight": {
+      "model": "window_box:block/alfthorne_wood_stairs",
+      "uvlock": true,
+      "x": 180,
+      "y": 180
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "window_box:block/alfthorne_slab"
+    },
+    "type=double": {
+      "model": "window_box:block/alfthorne_planks"
+    },
+    "type=top": {
+      "model": "window_box:block/alfthorne_slab_top"
+    }
+  }
+}

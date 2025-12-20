@@ -1,0 +1,7 @@
+{
+  "type": "botania:mana_infusion",
+  "catalyst": { "type": "block", "block": "botania:conjuration_catalyst" },
+  "input": { "item": "window_box:chthonic_yew_log" },
+  "output": { "item": "window_box:chthonic_yew_log", "count": 2 },
+  "mana": 2000
+}

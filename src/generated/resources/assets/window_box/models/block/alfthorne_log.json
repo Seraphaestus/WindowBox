@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "window_box:block/alfthorne/log_top",
+    "side": "window_box:block/alfthorne/log"
+  }
+}

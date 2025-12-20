@@ -1,0 +1,26 @@
+{
+  "targets": [ "swap", "swap2" ],
+  "passes": [
+    {
+      "name": "window_box:fisheye",
+      "intarget": "minecraft:main", "outtarget": "swap",
+      "uniforms": [
+        { "name": "Intensity", "values": [ 1.75 ] }
+      ]
+    },
+    {
+      "name": "color_convolve",
+      "intarget": "swap", "outtarget": "swap2",
+      "uniforms": [
+        { "name": "RedMatrix",   "values": [ 1.0, 0.15, 0.15 ] },
+        { "name": "GreenMatrix", "values": [ 0.15, 0.85, 0.15 ] },
+        { "name": "BlueMatrix",  "values": [ 0.15, 0.15, 0.95 ] }
+      ]
+    },
+    {
+      "name": "blit",
+      "intarget": "swap2", "outtarget": "minecraft:main",
+      "uniforms": []
+    }
+  ]
+}

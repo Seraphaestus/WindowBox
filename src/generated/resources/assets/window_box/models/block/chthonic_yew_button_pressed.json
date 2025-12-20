@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_pressed",
+  "textures": {
+    "texture": "window_box:block/chthonic_yew/planks"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "botania:floating_flower",
+  "ingredients": [
+    {
+      "item": "window_box:snapdresson"
+    },
+    {
+      "tag": "botania:floating_flowers"
+    }
+  ],
+  "result": {
+    "item": "window_box:floating_snapdresson"
+  }
+}

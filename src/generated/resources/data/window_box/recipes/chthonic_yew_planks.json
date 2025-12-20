@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "window_box:chthonic_yew_logs"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "window_box:chthonic_yew_planks"
+  }
+}

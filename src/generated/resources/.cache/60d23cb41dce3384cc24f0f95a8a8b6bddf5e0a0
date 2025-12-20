@@ -1,0 +1,24 @@
+// 1.20.1	2025-12-17T22:43:32.1833777	Tags for minecraft:item mod id window_box
+ba704c7edb5ab9e22207a3d51eabeb08b531caf2 data/botania/tags/items/functional_special_flowers.json
+9233f53d77f4a331985c7a95c07dc84071f5377d data/botania/tags/items/generating_special_flowers.json
+6c2c30728a52e3848ff26a3952ad674006ac2956 data/botania/tags/items/misc_special_flowers.json
+238e7a022253b531090b8dc7877b257b83b8b6c8 data/botania/tags/items/special_floating_flowers.json
+d0e14868a48c48fe80779becff066c0a3236e953 data/minecraft/tags/items/boats.json
+e2e0405bb52e81e65c008604a6d7ecbdb8fb05f4 data/minecraft/tags/items/chest_boats.json
+59aeca9404712ef15eaa0bb3fe93716b679fa374 data/minecraft/tags/items/fence_gates.json
+6442e1feee0df7576f38d7f8a523e6ea6f1a03ef data/minecraft/tags/items/hanging_signs.json
+632eae0c1d18b37631039882249450215cd4a581 data/minecraft/tags/items/leaves.json
+ecefba24869b5e392dfa86341caec63517f6f50a data/minecraft/tags/items/logs_that_burn.json
+339afe24a53c17827153a872d450feb95527271d data/minecraft/tags/items/planks.json
+7171def5709e66f3f58b5279c2986a55a1f3fbbd data/minecraft/tags/items/saplings.json
+4f8bfcc0235cad5f5ff136eb54a0281d47089882 data/minecraft/tags/items/signs.json
+cad6e8a65e8f9a0ddf357efc3700b3789f415c4d data/minecraft/tags/items/small_flowers.json
+4b76c61f79e423579224310fc94441cc1dc77ebb data/minecraft/tags/items/wooden_buttons.json
+4bfe3ffe9a5295c5471accf2baeb0331e37647b5 data/minecraft/tags/items/wooden_doors.json
+597482a8444ea1500b1d933ad08ce18801e82402 data/minecraft/tags/items/wooden_fences.json
+a211da43677e966911eabd570707be36942f6580 data/minecraft/tags/items/wooden_pressure_plates.json
+85ecbc18dc85b3613d218db02e62a96b79fe2e53 data/minecraft/tags/items/wooden_slabs.json
+4dd4ce83175de56764fdcdc9d46b54dbc090d370 data/minecraft/tags/items/wooden_stairs.json
+35168fdac739ea2a2560f2a855fd7812e9163621 data/minecraft/tags/items/wooden_trapdoors.json
+691f129e07d2d66e7b62c14b26ce460aa2dc0e02 data/window_box/tags/items/alfthorne_logs.json
+4693c73f3124dbc56b49fd275fb3eed7d0ffa1bc data/window_box/tags/items/chthonic_yew_logs.json

@@ -1,0 +1,11 @@
+{
+  "type": "botania:petal_apothecary",
+  "output": { "item": "window_box:glory_incarnata" },
+  "ingredients": [
+    { "tag": "botania:petals/red" },
+    { "tag": "botania:petals/orange" },
+    { "tag": "botania:petals/orange" },
+    { "tag": "botania:petals/yellow" },
+    { "item": "botania:rune_summer" }],
+  "reagent": { "tag": "botania:seed_apothecary_reagent" }
+}

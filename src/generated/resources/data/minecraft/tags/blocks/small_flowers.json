@@ -1,0 +1,16 @@
+{
+  "values": [
+    "window_box:snapdresson",
+    "window_box:candysnuft",
+    "window_box:queen_anelace",
+    "window_box:groundberry",
+    "window_box:oxidaisel",
+    "window_box:glory_incarnata",
+    "window_box:witch_pupil",
+    "window_box:dispelagonium",
+    {
+      "id": "window_box:topsy_tulip",
+      "required": false
+    }
+  ]
+}

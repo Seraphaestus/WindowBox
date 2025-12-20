@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "wooden_button",
+  "ingredients": [
+    {
+      "item": "window_box:alfthorne_planks"
+    }
+  ],
+  "result": {
+    "item": "window_box:alfthorne_button"
+  }
+}

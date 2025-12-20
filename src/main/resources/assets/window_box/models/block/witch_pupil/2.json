@@ -1,0 +1,5 @@
+{
+  "parent": "botania:block/shapes/cross",
+  "textures": { "cross": "window_box:block/witch_pupil/2" },
+  "render_type": "cutout"
+}

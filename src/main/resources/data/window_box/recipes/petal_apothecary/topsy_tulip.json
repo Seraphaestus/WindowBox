@@ -1,0 +1,20 @@
+{
+  "type": "forge:conditional",
+  "recipes": [{
+    "conditions": [
+      { "type": "forge:mod_loaded", "modid": "gravityapi" }
+    ],
+    "recipe": {
+      "type": "botania:petal_apothecary",
+      "output": { "item": "window_box:topsy_tulip" },
+      "ingredients": [
+        { "tag": "botania:petals/purple" },
+        { "tag": "botania:petals/light_blue" },
+        { "tag": "botania:petals/white" },
+        { "item": "botania:rune_earth" },
+        { "item": "botania:rune_air" },
+        { "item": "botania:redstone_root" }],
+      "reagent": { "tag": "botania:seed_apothecary_reagent" }
+    }
+  }]
+}

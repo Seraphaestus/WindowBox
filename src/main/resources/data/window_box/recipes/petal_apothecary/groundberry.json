@@ -1,0 +1,11 @@
+{
+  "type": "botania:petal_apothecary",
+  "output": { "item": "window_box:groundberry" },
+  "ingredients": [
+    { "tag": "botania:petals/green" },
+    { "tag": "botania:petals/green" },
+    { "tag": "botania:petals/lime" },
+    { "item": "minecraft:glow_berries" },
+    { "item": "botania:rune_greed" }],
+  "reagent": { "tag": "botania:seed_apothecary_reagent" }
+}

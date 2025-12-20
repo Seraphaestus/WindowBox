@@ -1,0 +1,75 @@
+{
+  "name": "window_box.entry.alfthorne",
+  "category": "botania:functional_flowers",
+  "icon": "window_box:alfthorne_sapling",
+  "advancement": "botania:main/terrasteel_pickup_lexicon",
+  "pages": [
+    {
+      "type": "text",
+      "text": "window_box.page.alfthorne0"
+    },
+    {
+      "type": "botania:petal_apothecary",
+      "recipe": "window_box:petal_apothecary/alfthorne_sapling",
+      "text": "window_box.page.alfthorne1"
+    },
+    {
+      "type": "window_box:multiblock",
+      "name": "window_box.page.sapling.multiblock",
+      "text": "window_box.page.sapling.facing",
+      "multiblock": {
+        "mapping": {
+          "#": "window_box:outline_block",
+          "P": "botania:diluted_pool",
+          "N": "botania:natura_pylon",
+          "0": "window_box:alfthorne_sapling"
+        },
+        "pattern": [
+          [
+            " N     N ",
+            "         ",
+            "         ",
+            "         ",
+            "         ",
+            "         ",
+            "         ",
+            "         ",
+            "         "
+          ],
+          [
+            " P     P ",
+            "         ",
+            "         ",
+            "         ",
+            "    0    ",
+            "         ",
+            "         ",
+            "         ",
+            "         "
+          ],
+          [
+            "   #     ",
+            "    ##   ",
+            "# ##### #",
+            "######## ",
+            " ####### ",
+            " ########",
+            "#  #### #",
+            "  ## ##  ",
+            "   #  #  "
+          ]
+        ]
+      },
+      "rotate": -135,
+      "scale": 1.35,
+      "offset_y": -1.5
+    }
+  ],
+  "extra_recipe_mappings": {
+    "window_box:alfthorne_leaves": 1,
+    "window_box:alfthorne_log": 1,
+    "window_box:alfthorne_wood": 1,
+    "window_box:alfthorne_wood_stairs": 1,
+    "window_box:alfthorne_wood_slab": 1
+  }
+}

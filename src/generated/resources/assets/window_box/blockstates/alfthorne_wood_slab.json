@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "window_box:block/alfthorne_wood_slab"
+    },
+    "type=double": {
+      "model": "window_box:block/alfthorne_wood"
+    },
+    "type=top": {
+      "model": "window_box:block/alfthorne_wood_slab_top"
+    }
+  }
+}

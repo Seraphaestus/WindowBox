@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/fence_side",
+  "textures": {
+    "texture": "window_box:block/chthonic_yew/planks"
+  }
+}

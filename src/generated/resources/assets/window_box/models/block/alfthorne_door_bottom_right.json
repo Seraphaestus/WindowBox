@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "window_box:block/alfthorne/door_bottom",
+    "top": "window_box:block/alfthorne/door_top"
+  }
+}

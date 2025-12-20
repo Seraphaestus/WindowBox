@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      { "model": "window_box:block/suspicious_grass" },
+      { "model": "window_box:block/suspicious_grass", "y": 90 },
+      { "model": "window_box:block/suspicious_grass", "y": 180 },
+      { "model": "window_box:block/suspicious_grass", "y": 270 }
+    ]
+  }
+}
