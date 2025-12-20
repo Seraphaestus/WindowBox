@@ -5,8 +5,8 @@
     { "item": "minecraft:dead_bush" },
     { "tag": "botania:petals/lime" },
     { "tag": "botania:petals/white" },
-    { "item": "botania:livingwood_twig"  },
-    { "item": "botania:livingwood_twig"  },
+    { "item": "minecraft:stick" },
+    { "item": "minecraft:stick" },
     { "item": "minecraft:obsidian" }
   ],
   "reagent": { "tag": "botania:seed_apothecary_reagent" }

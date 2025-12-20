@@ -5,8 +5,8 @@
     { "item": "minecraft:dead_bush" },
     { "tag": "botania:petals/green" },
     { "tag": "botania:petals/green" },
-    { "item": "minecraft:stick"  },
-    { "item": "minecraft:stick"  },
+    { "item": "botania:livingwood_twig" },
+    { "item": "botania:livingwood_twig" },
     { "item": "botania:alfheim_portal" }
   ],
   "reagent": { "tag": "botania:seed_apothecary_reagent" }
