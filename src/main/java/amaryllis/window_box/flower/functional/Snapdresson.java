@@ -141,16 +141,17 @@ public class Snapdresson extends SpecialFlowerBlockEntity implements Nameable {
             return InteractionResult.CONSUME;
         }
 
-        if (!hasLoadout()) {
-            if (!canSaveLoadout(player)) return InteractionResult.PASS;
-            saveLoadout(player);
-            level.playSound(null, pos, SAVE_SOUND.get(), SoundSource.BLOCKS);
+        if (hasLoadout()) {
+            if (loadLoadout(player)) {
+                level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, pos.getX() + 0.5, pos.getY() + 0.75, pos.getZ() + 0.5, 0, 0.05, 0);
+                level.playSound(null, pos, LOAD_SOUND.get(), SoundSource.BLOCKS);
+            }
             return InteractionResult.SUCCESS;
         }
 
-        if (loadLoadout(player)) {
-            level.addParticle(ParticleTypes.CAMPFIRE_COSY_SMOKE, pos.getX() + 0.5, pos.getY() + 0.75, pos.getZ() + 0.5, 0, 0.05, 0);
-            level.playSound(null, pos, LOAD_SOUND.get(), SoundSource.BLOCKS);
+        if (canSaveLoadout(player)) {
+            saveLoadout(player);
+            level.playSound(null, pos, SAVE_SOUND.get(), SoundSource.BLOCKS);
             return InteractionResult.SUCCESS;
         }
 
