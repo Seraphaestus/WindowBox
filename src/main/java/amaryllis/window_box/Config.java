@@ -25,6 +25,8 @@ public class Config {
     public static final ForgeConfigSpec.ConfigValue<List<? extends String>> SNAPDRESSON_DONT_LOOK_INSIDE;
     public static final ForgeConfigSpec.ConfigValue<List<? extends String>> SNAPDRESSON_DONT_COMPARE_TAGS;
 
+    public static final ForgeConfigSpec.ConfigValue<List<? extends String>> OXIDAISEL_CONVERSIONS;
+
     public static final ForgeConfigSpec.BooleanValue GLORY_INCARNATA_CAN_PREVENT_ZOMBIFICATION;
     public static final ForgeConfigSpec.ConfigValue<List<? extends String>> GLORY_INCARNATA_CURABLE;
 
@@ -49,7 +51,11 @@ public class Config {
         BUILDER.pop();
 
         BUILDER.push("Oxidaisel");
-        BUILDER.comment("The Oxidaisel will automatically apply to any WeatheringCopper");
+        OXIDAISEL_CONVERSIONS = BUILDER
+                .comment("The Oxidaisel will automatically apply to any WeatheringCopper, or blocks whose IDs match the oxidized, weathered, exposed pattern.")
+                .comment("This list of blocks will add or override conversions, or, if the output is invalid, remove conversions")
+                .comment("The list should be a sets of 2: input block ID, output block ID")
+                .defineListAllowEmpty("oxidaisel_conversions", List.of(), Config::validString);
         BUILDER.pop();
 
         BUILDER.push("Glory Incarnata");

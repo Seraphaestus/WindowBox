@@ -25,6 +25,7 @@ import vazkii.botania.client.integration.jei.*;
 import vazkii.botania.common.crafting.BotaniaRecipeTypes;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @JeiPlugin
@@ -56,7 +57,7 @@ public class JEIPlugin implements IModPlugin {
 
     @Override
     public void registerRecipes(@NotNull IRecipeRegistration registry) {
-        // Procedural Groundberry recipes from BrushableBlocks
+        // Procedural Groundberry recipes from BrushableBlocks. Manually add these two so they sort to the top, in this order.
         List<Groundberry.Recipe> groundberryRecipes = List.of(
                 Groundberry.Recipe.create((BrushableBlock) Blocks.SUSPICIOUS_SAND),
                 Groundberry.Recipe.create((BrushableBlock) Blocks.SUSPICIOUS_GRAVEL)
@@ -66,15 +67,25 @@ public class JEIPlugin implements IModPlugin {
                 .forEach(output -> groundberryRecipes.add(Groundberry.Recipe.create((BrushableBlock)output)));
         registry.addRecipes(Groundberry.RecipeCategory.TYPE, groundberryRecipes);
 
-        // Procedural Oxidaisel recipes from WeatheringCopper blocks
+        // Oxidaisel recipes
         List<Oxidaisel.Recipe> oxidaiselRecipes = new ArrayList<>();
         ForgeRegistries.BLOCKS.getValues().stream()
-                .filter(block -> block instanceof WeatheringCopper)
+                .filter(block -> Oxidaisel.WEATHERING_CONVERSIONS.containsKey(block))
                 .forEach(block -> {
                     var recipe = Oxidaisel.Recipe.create(block);
                     if (recipe != null) oxidaiselRecipes.add(recipe);
                 });
+        oxidaiselRecipes.sort(JEIPlugin::sortMinecraftFirst);
         registry.addRecipes(Oxidaisel.RecipeCategory.TYPE, oxidaiselRecipes);
     }
 
+    public static int sortMinecraftFirst(ConversionRecipe a, ConversionRecipe b) {
+        var aRL = ForgeRegistries.BLOCKS.getKey(a.output.getBlock());
+        var bRL = ForgeRegistries.BLOCKS.getKey(b.output.getBlock());
+        boolean aIsMC = aRL.getNamespace().equals(ResourceLocation.DEFAULT_NAMESPACE);
+        boolean bIsMC = bRL.getNamespace().equals(ResourceLocation.DEFAULT_NAMESPACE);
+        if (aIsMC && !bIsMC) return -1;
+        if (!aIsMC && bIsMC) return 1;
+        return aRL.compareNamespaced(bRL);
+    }
 }

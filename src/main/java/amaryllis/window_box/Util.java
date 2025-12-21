@@ -14,6 +14,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.phys.Vec3;
@@ -213,4 +214,16 @@ public class Util {
         }
     }
     //endregion
+
+    public static BlockState convertBlock(BlockState state, Block newType) {
+        if (state.getBlock() == newType) return state;
+        BlockState output = newType.defaultBlockState();
+        for (var property: state.getProperties()) {
+            output = trySetBlockStateValue(output, property, state.getValue(property));
+        }
+        return output;
+    }
+    protected static <T extends Comparable<T>, V>  BlockState trySetBlockStateValue(BlockState state, Property<T> property, V value) {
+        return state.trySetValue(property, (T)value);
+    }
 }

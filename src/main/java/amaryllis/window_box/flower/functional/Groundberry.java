@@ -55,8 +55,6 @@ import static amaryllis.window_box.flower.CustomFlower.FLOATING;
 
 public class Groundberry extends FunctionalFlowerBlockEntity {
 
-    public static final RecipeType<Recipe> RECIPE_TYPE = new Registry.ModRecipeType<>();
-
     public static final String ID = "groundberry";
     public static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 16, 15);
 

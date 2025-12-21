@@ -168,6 +168,7 @@ public class Registry {
 
     public static void onCommonSetup() {
         Groundberry.cacheRecipes();
+        Oxidaisel.cacheRecipes();
 
         Potions.registerRecipes();
 
