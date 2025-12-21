@@ -109,7 +109,8 @@ public class Oxidaisel extends FunctionalFlowerBlockEntity {
             ResourceLocation key = entry.getKey().location();
             if (key.getPath().contains("oxidized") && !key.getPath().contains("waxed")) {
                 Block weathered = getWeatheredVariant(key, WeatherState.WEATHERED);
-                if (weathered == null || weathered instanceof WeatheringCopper) return;
+                if (weathered == null) return;
+                if (weathered instanceof WeatheringCopper && WeatheringCopper.getNext(weathered).isPresent()) return;
                 Block exposed = getWeatheredVariant(key, WeatherState.EXPOSED);
                 if (exposed == null) return;
                 Block base = getWeatheredVariant(key, WeatherState.UNAFFECTED);
