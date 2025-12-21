@@ -340,6 +340,15 @@ public class WitchPupil extends FunctionalFlowerBlockEntity {
 
         @Override
         public @NotNull InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+            // Replenish eye count from witch's pupil, to preserve the floating island
+            var heldItem = player.getItemInHand(hand);
+            if (heldItem.is(Registry.getItem(ID)) && state.getValue(Block.EYES) < MAX_EYES) {
+                level.setBlockAndUpdate(pos, state.setValue(Block.EYES, MAX_EYES));
+                level.playSound(null, pos, state.getSoundType().getPlaceSound(), SoundSource.BLOCKS);
+                if (!player.getAbilities().instabuild) heldItem.shrink(1);
+                return InteractionResult.SUCCESS;
+            }
+
             return WitchPupil.PluckEye(state, level, pos, player, hand);
         }
     }
