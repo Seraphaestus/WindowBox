@@ -271,6 +271,11 @@ public class Snapdresson extends SpecialFlowerBlockEntity implements Nameable {
         var wornCurio = curiosStacks.getStackInSlot(slotIndex);
         if (desired.isEmpty() || matchesDesiredStack(wornCurio, desired)) return false;
 
+        if (player.isCreative()) {
+            curiosStacks.setStackInSlot(slotIndex, desired.copy());
+            return true;
+        }
+
         // Check other curios slots
         for (String otherSlotType: curios.keySet()) {
             var otherStacks = curios.get(otherSlotType).getStacks();
