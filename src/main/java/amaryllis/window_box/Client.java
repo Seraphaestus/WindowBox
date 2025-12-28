@@ -12,6 +12,7 @@ import amaryllis.window_box.tree.TreeHelper;
 import com.google.common.base.Suppliers;
 import net.minecraft.client.model.BoatModel;
 import net.minecraft.client.model.ChestBoatModel;
+import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -20,7 +21,6 @@ import net.minecraft.client.resources.model.Material;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.BlockAndTintGetter;
 import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -50,6 +50,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import static amaryllis.window_box.Registry.ClientOnly.PARTICLE_TYPES;
 import static net.minecraft.client.renderer.Sheets.SIGN_SHEET;
 
 @Mod.EventBusSubscriber(modid = WindowBox.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -68,6 +69,8 @@ public class Client {
         EntityRenderers.register(FakePlayer.ENTITY_TYPE.get(), FakePlayerRenderer::new);
         EntityRenderers.register(CustomBoat.ENTITY_TYPE.get(), context -> new CustomBoat.Renderer(context, false));
         EntityRenderers.register(CustomBoat.WithChest.ENTITY_TYPE.get(), context -> new CustomBoat.Renderer(context, true));
+
+        HumanoidModel.ArmPose.create("HOLD_BOUQUET", false, Bouquet::poseArm);
 
         BetterMultiblockPage.register();
     }
@@ -105,7 +108,7 @@ public class Client {
 
     @SubscribeEvent
     public static void RegisterParticles(RegisterParticleProvidersEvent event) {
-        Registry.PARTICLE_TYPES.forEach((ID, data) ->
+        PARTICLE_TYPES.forEach((ID, data) ->
             event.registerSpriteSet((ParticleType<SimpleParticleType>)data.getA().get(), data.getB())
         );
     }

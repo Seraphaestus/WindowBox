@@ -31,11 +31,6 @@ public class DiamondRadiusRenderer<T extends SpecialFlowerBlockEntity> extends S
     protected static final HashMap<Integer, Vector2i[]> VERTICES = new HashMap<>();
 
 
-    public static RadiusDescriptor RadiusDescriptorDiamond(BlockPos pos, int radius) {
-        return new RadiusDescriptor.Circle(pos, 64 + radius);
-    }
-
-
     public DiamondRadiusRenderer(BlockEntityRendererProvider.Context context) {
         super(context);
     }

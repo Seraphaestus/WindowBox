@@ -6,6 +6,7 @@ import amaryllis.window_box.Registry;
 import amaryllis.window_box.Util;
 import amaryllis.window_box.flower.CustomFlower;
 import amaryllis.window_box.flower.FlowerHelper;
+import amaryllis.window_box.flower.functional.Snapdresson;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
@@ -20,6 +21,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CandleBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,7 +36,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static amaryllis.window_box.Registry.*;
+import static amaryllis.window_box.Registry.ClientOnly.RegisterBlockEntityRenderer;
 import static amaryllis.window_box.flower.CustomFlower.FLOATING;
+import static net.minecraftforge.fml.DistExecutor.unsafeRunWhenOn;
 
 public class Candysnuft extends GeneratingFlowerBlockEntity {
 
@@ -62,8 +66,10 @@ public class Candysnuft extends GeneratingFlowerBlockEntity {
         FlowerHelper.RegisterPottedFlower(ID);
 
         CustomFlower.RegisterBlockEntityType(ID, Candysnuft::new);
-        RegisterBlockEntityRenderer(ID, SpecialFlowerBlockEntityRenderer<Candysnuft>::new);
-        RegisterWandHUD(ID, Client.GENERATING_FLOWER_HUD);
+        unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            RegisterBlockEntityRenderer(ID, SpecialFlowerBlockEntityRenderer<Candysnuft>::new);
+            RegisterWandHUD(ID, Client.GENERATING_FLOWER_HUD);
+        });
 
         CustomFlower.RegisterStewEffect(ID, MobEffects.FIRE_RESISTANCE, 4);
 

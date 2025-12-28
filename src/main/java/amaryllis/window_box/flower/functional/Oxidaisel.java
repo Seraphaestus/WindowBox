@@ -7,7 +7,6 @@ import amaryllis.window_box.flower.FlowerHelper;
 import amaryllis.window_box.recipes.ConversionRecipe;
 import amaryllis.window_box.recipes.ConversionRecipeCategory;
 import mezz.jei.api.helpers.IGuiHelper;
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
@@ -21,6 +20,7 @@ import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.WeatheringCopper.WeatherState;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -36,8 +36,10 @@ import vazkii.botania.common.item.block.SpecialFlowerBlockItem;
 import java.util.*;
 
 import static amaryllis.window_box.Registry.*;
+import static amaryllis.window_box.Registry.ClientOnly.RegisterBlockEntityRenderer;
 import static amaryllis.window_box.flower.CustomFlower.FLOATING;
-import static amaryllis.window_box.flower.DiamondRadiusRenderer.RadiusDescriptorDiamond;
+import static amaryllis.window_box.flower.CustomFlower.RadiusDescriptorDiamond;
+import static net.minecraftforge.fml.DistExecutor.unsafeRunWhenOn;
 
 public class Oxidaisel extends FunctionalFlowerBlockEntity {
 
@@ -65,8 +67,10 @@ public class Oxidaisel extends FunctionalFlowerBlockEntity {
         FlowerHelper.RegisterPottedFlower(ID);
 
         CustomFlower.RegisterBlockEntityType(ID, Oxidaisel::new);
-        RegisterBlockEntityRenderer(ID, DiamondRadiusRenderer<Oxidaisel>::new);
-        RegisterWandHUD(ID, Client.FUNCTIONAL_FLOWER_HUD);
+        unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            RegisterBlockEntityRenderer(ID, DiamondRadiusRenderer<Oxidaisel>::new);
+            RegisterWandHUD(ID, Client.FUNCTIONAL_FLOWER_HUD);
+        });
 
         CustomFlower.RegisterStewEffect(ID, MobEffects.POISON, 8);
 

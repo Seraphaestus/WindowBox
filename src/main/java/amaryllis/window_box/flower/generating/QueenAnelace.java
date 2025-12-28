@@ -16,6 +16,7 @@ import net.minecraft.world.level.block.GrassBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.registries.RegistryObject;
 import org.joml.Vector2i;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
@@ -31,7 +32,9 @@ import java.util.List;
 import java.util.function.Supplier;
 
 import static amaryllis.window_box.Registry.*;
+import static amaryllis.window_box.Registry.ClientOnly.RegisterBlockEntityRenderer;
 import static amaryllis.window_box.flower.CustomFlower.FLOATING;
+import static net.minecraftforge.fml.DistExecutor.unsafeRunWhenOn;
 
 public class QueenAnelace extends GeneratingFlowerBlockEntity {
 
@@ -72,8 +75,10 @@ public class QueenAnelace extends GeneratingFlowerBlockEntity {
         FlowerHelper.RegisterPottedFlower(ID);
 
         CustomFlower.RegisterBlockEntityType(ID, QueenAnelace::new);
-        RegisterBlockEntityRenderer(ID, SpecialFlowerBlockEntityRenderer<QueenAnelace>::new);
-        RegisterWandHUD(ID, Client.GENERATING_FLOWER_HUD);
+        unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            RegisterBlockEntityRenderer(ID, SpecialFlowerBlockEntityRenderer<QueenAnelace>::new);
+            RegisterWandHUD(ID, Client.GENERATING_FLOWER_HUD);
+        });
 
         CustomFlower.RegisterStewEffect(ID, MobEffects.WATER_BREATHING, 8);
 

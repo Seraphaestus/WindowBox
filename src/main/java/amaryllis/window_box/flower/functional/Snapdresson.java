@@ -3,6 +3,7 @@ package amaryllis.window_box.flower.functional;
 import amaryllis.window_box.Config;
 import amaryllis.window_box.DataGen;
 import amaryllis.window_box.Registry;
+import amaryllis.window_box.WindowBox;
 import amaryllis.window_box.flower.CustomFlower;
 import amaryllis.window_box.flower.FlowerHelper;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -36,6 +37,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
@@ -61,8 +63,10 @@ import java.util.*;
 import java.util.function.Supplier;
 
 import static amaryllis.window_box.Registry.*;
+import static amaryllis.window_box.Registry.ClientOnly.RegisterBlockEntityRenderer;
 import static amaryllis.window_box.flower.CustomFlower.FLOATING;
 import static net.minecraft.world.level.block.Block.box;
+import static net.minecraftforge.fml.DistExecutor.unsafeRunWhenOn;
 
 public class Snapdresson extends SpecialFlowerBlockEntity implements Nameable {
 
@@ -90,8 +94,10 @@ public class Snapdresson extends SpecialFlowerBlockEntity implements Nameable {
         FlowerHelper.RegisterPottedFlower(ID);
 
         CustomFlower.RegisterBlockEntityType(ID, Snapdresson::new);
-        RegisterBlockEntityRenderer(ID, SpecialRenderer::new);
-        RegisterWandHUD(ID, flower -> new Snapdresson.WandHUD((Snapdresson) flower));
+        unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            RegisterBlockEntityRenderer(ID, SpecialRenderer::new);
+            RegisterWandHUD(ID, flower -> new Snapdresson.WandHUD((Snapdresson) flower));
+        });
 
         CustomFlower.RegisterStewEffect(ID, MobEffects.GLOWING, 8);
 
@@ -198,8 +204,6 @@ public class Snapdresson extends SpecialFlowerBlockEntity implements Nameable {
     public boolean trySaveItemToLoadout(ItemStack stack, ICurio curio, Player player) {
         var curiosInventory = CuriosApi.getCuriosInventory(player).orElse(null);
         if (curiosInventory == null) return false;
-
-        boolean doDebug = (loadout != null);
 
         boolean matchesAnySlot = false;
         // First pass -> try place curio in the first empty slot
@@ -335,7 +339,10 @@ public class Snapdresson extends SpecialFlowerBlockEntity implements Nameable {
     }
 
     protected static int SlotComparator(String slotTypeA, String slotTypeB) {
-        return CuriosApi.getSlot(slotTypeA).get().getOrder() - CuriosApi.getSlot(slotTypeB).get().getOrder();
+        var slotA = CuriosApi.getSlot(slotTypeA).orElse(null);
+        var slotB = CuriosApi.getSlot(slotTypeB).orElse(null);
+        if (slotA == null || slotB == null) return slotTypeA.compareTo(slotTypeB);
+        return slotA.getOrder() - slotB.getOrder();
     }
 
     public List<ItemStack> getLoadoutItemsList() {
@@ -398,9 +405,11 @@ public class Snapdresson extends SpecialFlowerBlockEntity implements Nameable {
     public void readFromPacketNBT(CompoundTag tag) {
         super.readFromPacketNBT(tag);
 
-        loadout = null;
         if (tag.contains(TAG_LOADOUT)) {
-            loadout = new TreeMap<>(Snapdresson::SlotComparator);
+            if (loadout == null) loadout = new TreeMap<>(Snapdresson::SlotComparator);
+            else loadout.clear();
+
+            WindowBox.LOGGER.info("Reading loadout from nbt");
             var tag_loadout = tag.getCompound(TAG_LOADOUT);
             for (String slotType: tag_loadout.getAllKeys()) {
                 var tag_stacks = tag_loadout.getList(slotType, Tag.TAG_COMPOUND);
@@ -410,6 +419,9 @@ public class Snapdresson extends SpecialFlowerBlockEntity implements Nameable {
                 }
                 loadout.put(slotType, stacks);
             }
+            WindowBox.LOGGER.info("Loaded loadout: {} -> {}", tag_loadout, loadout);
+        } else {
+            loadout = null;
         }
 
         if (tag.contains("CustomName", Tag.TAG_STRING)) {

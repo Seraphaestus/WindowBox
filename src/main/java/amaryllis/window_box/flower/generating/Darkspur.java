@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.WeatheringCopper;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.registries.ForgeRegistries;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.api.block_entity.RadiusDescriptor;
@@ -28,8 +29,10 @@ import java.util.List;
 import java.util.Optional;
 
 import static amaryllis.window_box.Registry.*;
+import static amaryllis.window_box.Registry.ClientOnly.RegisterBlockEntityRenderer;
 import static amaryllis.window_box.flower.CustomFlower.FLOATING;
 import static net.minecraft.world.item.HoneycombItem.WAXABLES;
+import static net.minecraftforge.fml.DistExecutor.unsafeRunWhenOn;
 
 public class Darkspur extends GeneratingFlowerBlockEntity {
 
@@ -49,8 +52,10 @@ public class Darkspur extends GeneratingFlowerBlockEntity {
         FlowerHelper.RegisterPottedFlower(ID);
 
         CustomFlower.RegisterBlockEntityType(ID, Darkspur::new);
-        RegisterBlockEntityRenderer(ID, SpecialFlowerBlockEntityRenderer<Darkspur>::new);
-        RegisterWandHUD(ID, Client.GENERATING_FLOWER_HUD);
+        unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            RegisterBlockEntityRenderer(ID, SpecialFlowerBlockEntityRenderer<Darkspur>::new);
+            RegisterWandHUD(ID, Client.GENERATING_FLOWER_HUD);
+        });
 
         CustomFlower.RegisterStewEffect(ID, MobEffects.DARKNESS, 3);
 

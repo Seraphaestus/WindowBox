@@ -7,7 +7,6 @@ import amaryllis.window_box.flower.CustomFlower;
 import amaryllis.window_box.flower.FlowerHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
@@ -62,7 +61,9 @@ import java.util.function.Supplier;
 
 import static amaryllis.window_box.DataGen.*;
 import static amaryllis.window_box.Registry.*;
+import static amaryllis.window_box.Registry.ClientOnly.RegisterBlockEntityRenderer;
 import static amaryllis.window_box.flower.CustomFlower.FLOATING;
+import static net.minecraftforge.fml.DistExecutor.unsafeRunWhenOn;
 
 @Mod.EventBusSubscriber(modid = WindowBox.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class WitchPupil extends FunctionalFlowerBlockEntity {
@@ -97,8 +98,10 @@ public class WitchPupil extends FunctionalFlowerBlockEntity {
         FlowerHelper.RegisterPottedFlower(ID, ID + "/" + MAX_EYES);
 
         CustomFlower.RegisterBlockEntityType(ID, WitchPupil::new);
-        RegisterBlockEntityRenderer(ID, SpecialFlowerBlockEntityRenderer<WitchPupil>::new);
-        RegisterWandHUD(ID, Client.FUNCTIONAL_FLOWER_HUD);
+        unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            RegisterBlockEntityRenderer(ID, SpecialFlowerBlockEntityRenderer<WitchPupil>::new);
+            RegisterWandHUD(ID, Client.FUNCTIONAL_FLOWER_HUD);
+        });
 
         CustomFlower.RegisterStewEffect(ID, MobEffects.BLINDNESS, 11);
 
@@ -234,7 +237,7 @@ public class WitchPupil extends FunctionalFlowerBlockEntity {
         return false;
     }
 
-    public static void handleControls(LocalPlayer player) {
+    public static void handleControls() {
         var keys = Minecraft.getInstance().options;
         int direction = 0;
         if (keys.keyRight.isDown()) direction = 1;
@@ -436,7 +439,7 @@ public class WitchPupil extends FunctionalFlowerBlockEntity {
         public static void onClientTick(TickEvent.ClientTickEvent event) {
             if (event.phase != TickEvent.Phase.END) return;
             var player = Minecraft.getInstance().player;
-            if (player != null) WitchPupil.handleControls(player);
+            if (player != null) WitchPupil.handleControls();
         }
     }
 

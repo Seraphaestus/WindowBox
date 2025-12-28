@@ -22,6 +22,7 @@ import net.minecraft.world.item.trading.MerchantOffers;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -37,7 +38,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static amaryllis.window_box.Registry.*;
+import static amaryllis.window_box.Registry.ClientOnly.RegisterBlockEntityRenderer;
 import static amaryllis.window_box.flower.CustomFlower.FLOATING;
+import static net.minecraftforge.fml.DistExecutor.unsafeRunWhenOn;
 
 @Mod.EventBusSubscriber(modid = WindowBox.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class GloryIncarnata extends FunctionalFlowerBlockEntity {
@@ -63,8 +66,10 @@ public class GloryIncarnata extends FunctionalFlowerBlockEntity {
         FlowerHelper.RegisterPottedFlower(ID);
 
         CustomFlower.RegisterBlockEntityType(ID, GloryIncarnata::new);
-        RegisterBlockEntityRenderer(ID, SpecialFlowerBlockEntityRenderer<GloryIncarnata>::new);
-        RegisterWandHUD(ID, Client.FUNCTIONAL_FLOWER_HUD);
+        unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            RegisterBlockEntityRenderer(ID, SpecialFlowerBlockEntityRenderer<GloryIncarnata>::new);
+            RegisterWandHUD(ID, Client.FUNCTIONAL_FLOWER_HUD);
+        });
 
         CustomFlower.RegisterStewEffect(ID, MobEffects.SATURATION, 7);
 

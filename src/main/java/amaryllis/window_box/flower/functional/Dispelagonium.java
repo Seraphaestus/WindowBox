@@ -17,6 +17,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.registries.ForgeRegistries;
 import vazkii.botania.api.block_entity.FunctionalFlowerBlockEntity;
 import vazkii.botania.api.block_entity.RadiusDescriptor;
@@ -32,7 +33,9 @@ import java.util.Map;
 import java.util.function.Supplier;
 
 import static amaryllis.window_box.Registry.*;
+import static amaryllis.window_box.Registry.ClientOnly.RegisterBlockEntityRenderer;
 import static amaryllis.window_box.flower.CustomFlower.FLOATING;
+import static net.minecraftforge.fml.DistExecutor.unsafeRunWhenOn;
 
 public class Dispelagonium extends FunctionalFlowerBlockEntity {
 
@@ -53,8 +56,10 @@ public class Dispelagonium extends FunctionalFlowerBlockEntity {
         FlowerHelper.RegisterPottedFlower(ID);
 
         CustomFlower.RegisterBlockEntityType(ID, Dispelagonium::new);
-        RegisterBlockEntityRenderer(ID, SpecialFlowerBlockEntityRenderer<Dispelagonium>::new);
-        RegisterWandHUD(ID, Client.FUNCTIONAL_FLOWER_HUD);
+        unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            RegisterBlockEntityRenderer(ID, SpecialFlowerBlockEntityRenderer<Dispelagonium>::new);
+            RegisterWandHUD(ID, Client.FUNCTIONAL_FLOWER_HUD);
+        });
 
         CustomFlower.RegisterStewEffect(ID, MobEffects.INVISIBILITY, 5);
 

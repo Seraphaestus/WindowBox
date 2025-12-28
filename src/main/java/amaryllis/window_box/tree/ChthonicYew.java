@@ -8,7 +8,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Blocks;
@@ -18,8 +17,13 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.registries.RegistryObject;
 import org.joml.Vector2i;
+
+import static amaryllis.window_box.Registry.ClientOnly.RegisterParticleType;
+import static amaryllis.window_box.Registry.ClientOnly.getParticleType;
+import static net.minecraftforge.fml.DistExecutor.unsafeRunWhenOn;
 
 public class ChthonicYew {
 
@@ -33,7 +37,9 @@ public class ChthonicYew {
         SET_TYPE = TreeHelper.RegisterWoodSetType(ID);
         WOOD_TYPE = TreeHelper.RegisterWoodType(ID, SET_TYPE);
 
-        Registry.RegisterParticleType(ID + "_leaves", LeafParticle::Factory);
+        unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            RegisterParticleType(ID + "_leaves", LeafParticle::Factory);
+        });
 
         TreeHelper.register(ID, SET_TYPE, WOOD_TYPE, ChthonicYew.Sapling::new, ChthonicYew.Leaves::new,
                 MapColor.TERRACOTTA_WHITE, MapColor.TERRACOTTA_BLACK, MapColor.TERRACOTTA_WHITE);
@@ -90,7 +96,7 @@ public class ChthonicYew {
 
     public static class Leaves extends CustomLeaves {
         protected int getParticleRarity() { return 8; }
-        protected ParticleOptions fetchParticle() { return Registry.getParticleType(ID + "_leaves"); }
+        protected ParticleOptions fetchParticle() { return getParticleType(ID + "_leaves"); }
 
         @Override
         protected BlockPos[] getAdjacentPositions() {

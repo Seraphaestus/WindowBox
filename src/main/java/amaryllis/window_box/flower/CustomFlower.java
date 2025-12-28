@@ -14,6 +14,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
+import vazkii.botania.api.block_entity.RadiusDescriptor;
 import vazkii.botania.api.block_entity.SpecialFlowerBlockEntity;
 import vazkii.botania.forge.block.ForgeSpecialFlowerBlock;
 
@@ -63,5 +64,9 @@ public class CustomFlower extends ForgeSpecialFlowerBlock {
     public @NotNull VoxelShape getShape(BlockState state, @NotNull BlockGetter world, @NotNull BlockPos pos, CollisionContext ctx) {
         Vec3 shift = state.getOffset(world, pos);
         return shape.move(shift.x, shift.y, shift.z);
+    }
+
+    public static RadiusDescriptor RadiusDescriptorDiamond(BlockPos pos, int radius) {
+        return new RadiusDescriptor.Circle(pos, 64 + radius);
     }
 }

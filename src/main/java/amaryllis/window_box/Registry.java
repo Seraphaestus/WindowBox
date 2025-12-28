@@ -32,11 +32,11 @@ import net.minecraft.world.item.crafting.RecipeType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -54,7 +54,6 @@ import vazkii.botania.forge.CapabilityUtil;
 import vazkii.botania.mixin.FireBlockAccessor;
 import vazkii.botania.xplat.XplatAbstractions;
 
-import java.lang.reflect.Array;
 import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -80,7 +79,6 @@ public class Registry {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MOD_ID);
 
     private static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES_REGISTER = DeferredRegister.create(ForgeRegistries.PARTICLE_TYPES, MOD_ID);
-    public static final HashMap<String, Tuple<RegistryObject<ParticleType<? extends ParticleOptions>>, ParticleEngine.SpriteParticleRegistration<SimpleParticleType>>> PARTICLE_TYPES = new HashMap<>();
 
     private static final DeferredRegister<SoundEvent> SOUNDS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, MOD_ID);
 
@@ -222,16 +220,6 @@ public class Registry {
         }));
     }
 
-    public static <T extends BlockEntity> void RegisterBlockEntityRenderer(String ID, BlockEntityRendererProvider<T> renderer) {
-        BE_RENDERER_REGISTRARS.add(event -> event.registerBlockEntityRenderer((BlockEntityType<T>)getBlockEntityType(ID), renderer));
-    }
-
-    public static void RegisterParticleType(String ID, ParticleEngine.SpriteParticleRegistration<SimpleParticleType> factory) {
-        PARTICLE_TYPES.put(ID, new Tuple<>(
-                PARTICLE_TYPES_REGISTER.register(ID, () -> new SimpleParticleType(false)),
-                factory));
-    }
-
     public static RegistryObject<SoundEvent> RegisterSound(String ID) {
         return SOUNDS.register(ID, () -> SoundEvent.createVariableRangeEvent(WindowBox.RL(ID)));
     }
@@ -251,7 +239,6 @@ public class Registry {
     public static Block getBlock(String ID) { return BLOCKS.get(ID).get(); }
     public static Item getItem(String ID) { return ITEMS.get(ID).get(); }
     public static BlockEntityType<? extends BlockEntity> getBlockEntityType(String ID) { return BLOCK_ENTITY_TYPES.get(ID).get(); }
-    public static SimpleParticleType getParticleType(String ID) { return (SimpleParticleType)PARTICLE_TYPES.get(ID).getA().get(); }
 
     public static Stream<Block> getBlocks() { return BLOCKS.values().stream().map(RegistryObject::get); }
     public static Stream<Block> getBlocksForLootGen() {
@@ -271,6 +258,24 @@ public class Registry {
 
     public static BlockBehaviour.Properties propOf(Block block) {
         return BlockBehaviour.Properties.copy(block);
+    }
+
+
+    @OnlyIn(Dist.CLIENT)
+    public static class ClientOnly {
+        public static final HashMap<String, Tuple<RegistryObject<ParticleType<? extends ParticleOptions>>, ParticleEngine.SpriteParticleRegistration<SimpleParticleType>>> PARTICLE_TYPES = new HashMap<>();
+
+        public static <T extends BlockEntity> void RegisterBlockEntityRenderer(String ID, BlockEntityRendererProvider<T> renderer) {
+            BE_RENDERER_REGISTRARS.add(event -> event.registerBlockEntityRenderer((BlockEntityType<T>)getBlockEntityType(ID), renderer));
+        }
+
+        public static void RegisterParticleType(String ID, ParticleEngine.SpriteParticleRegistration<SimpleParticleType> factory) {
+            PARTICLE_TYPES.put(ID, new Tuple<>(
+                    PARTICLE_TYPES_REGISTER.register(ID, () -> new SimpleParticleType(false)),
+                    factory));
+        }
+
+        public static SimpleParticleType getParticleType(String ID) { return (SimpleParticleType)PARTICLE_TYPES.get(ID).getA().get(); }
     }
 
 

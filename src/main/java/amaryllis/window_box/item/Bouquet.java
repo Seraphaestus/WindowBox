@@ -58,8 +58,6 @@ public class Bouquet extends Item implements CustomItemRenderer.Item, Registry.D
 
     public static void register() {
         RegisterItem(ID, () -> new Bouquet(new Item.Properties().stacksTo(1)));
-
-        HumanoidModel.ArmPose.create("HOLD_BOUQUET", false, Bouquet::poseArm);
     }
 
     public Bouquet(Properties properties) {
@@ -261,7 +259,7 @@ public class Bouquet extends Item implements CustomItemRenderer.Item, Registry.D
     public static boolean isHoldingOutBouquet() {
         return Minecraft.getInstance().options.keyUse.isDown();
     }
-    protected static void poseArm(HumanoidModel<?> model, LivingEntity entity, HumanoidArm arm) {
+    public static void poseArm(HumanoidModel<?> model, LivingEntity entity, HumanoidArm arm) {
         if (isHoldingOutBouquet()) {
             var modelArm = (arm == HumanoidArm.RIGHT) ? model.rightArm : model.leftArm;
             modelArm.xRot = (float) Math.toRadians(-75);

@@ -1,9 +1,6 @@
 package amaryllis.window_box.tree;
 
 import amaryllis.window_box.Registry;
-import amaryllis.window_box.flower.CustomFlower;
-import amaryllis.window_box.flower.functional.Dispelagonium;
-import com.google.common.collect.ImmutableList;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.core.BlockPos;
@@ -17,16 +14,17 @@ import net.minecraft.world.level.block.entity.HangingSignBlockEntity;
 import net.minecraft.world.level.block.entity.SignBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
-import vazkii.botania.client.render.block_entity.SpecialFlowerBlockEntityRenderer;
+import net.minecraftforge.api.distmarker.Dist;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static amaryllis.window_box.Registry.*;
+import static amaryllis.window_box.Registry.ClientOnly.RegisterBlockEntityRenderer;
 import static amaryllis.window_box.Registry.RegisterBlockOnly;
 import static amaryllis.window_box.Registry.RegisterItem;
 import static amaryllis.window_box.Registry.getBlock;
 import static amaryllis.window_box.Registry.propOf;
+import static net.minecraftforge.fml.DistExecutor.unsafeRunWhenOn;
 
 public class CustomSigns {
 
@@ -43,8 +41,10 @@ public class CustomSigns {
         });
         Registry.RegisterBlockEntityType(CustomSignBlockEntity.ID, CustomSignBlockEntity::new, allSigns);
         Registry.RegisterBlockEntityType(CustomHangingSignBlockEntity.ID, CustomHangingSignBlockEntity::new, allHangingSigns);
-        RegisterBlockEntityRenderer(CustomSignBlockEntity.ID, SignRenderer::new);
-        RegisterBlockEntityRenderer(CustomHangingSignBlockEntity.ID, HangingSignRenderer::new);
+        unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
+            RegisterBlockEntityRenderer(CustomSignBlockEntity.ID, SignRenderer::new);
+            RegisterBlockEntityRenderer(CustomHangingSignBlockEntity.ID, HangingSignRenderer::new);
+        });
     }
 
     public static void RegisterVariant(String ID, WoodType woodType) {
