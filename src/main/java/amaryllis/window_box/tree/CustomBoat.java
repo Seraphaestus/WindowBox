@@ -211,7 +211,7 @@ public class CustomBoat extends Boat {
         public static final String ID = "chest_boat";
         public static RegistryObject<EntityType<CustomBoat.WithChest>> ENTITY_TYPE;
 
-        protected static final EntityDataAccessor<String> DATA_VARIANT = SynchedEntityData.defineId(amaryllis.window_box.tree.CustomBoat.class, EntityDataSerializers.STRING);
+        protected static final EntityDataAccessor<String> DATA_VARIANT = SynchedEntityData.defineId(CustomBoat.WithChest.class, EntityDataSerializers.STRING);
         protected static final String DEFAULT_VARIANT = ChthonicYew.ID;
 
         public WithChest(EntityType<CustomBoat.WithChest> entityType, Level level) {
