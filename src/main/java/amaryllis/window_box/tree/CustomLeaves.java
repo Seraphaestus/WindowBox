@@ -47,6 +47,7 @@ public abstract class CustomLeaves extends LeavesBlock {
         BlockState belowState = level.getBlockState(below);
         if (isFaceFull(belowState.getCollisionShape(level, below), Direction.UP)) return;
         if (particle == null) particle = fetchParticle();
+        if (particle == null) return;
         ParticleUtils.spawnParticleBelow(level, pos, random, particle);
     }
 

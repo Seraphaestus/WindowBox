@@ -263,19 +263,21 @@ public class Registry {
 
     @OnlyIn(Dist.CLIENT)
     public static class ClientOnly {
-        public static final HashMap<String, Tuple<RegistryObject<ParticleType<? extends ParticleOptions>>, ParticleEngine.SpriteParticleRegistration<SimpleParticleType>>> PARTICLE_TYPES = new HashMap<>();
+        public static final HashMap<String, RegistryObject<ParticleType<? extends ParticleOptions>>> PARTICLE_TYPES = new HashMap<>();
+        public static final HashMap<String, ParticleEngine.SpriteParticleRegistration<SimpleParticleType>> PARTICLE_FACTORIES = new HashMap<>();
 
         public static <T extends BlockEntity> void RegisterBlockEntityRenderer(String ID, BlockEntityRendererProvider<T> renderer) {
             BE_RENDERER_REGISTRARS.add(event -> event.registerBlockEntityRenderer((BlockEntityType<T>)getBlockEntityType(ID), renderer));
         }
 
         public static void RegisterParticleType(String ID, ParticleEngine.SpriteParticleRegistration<SimpleParticleType> factory) {
-            PARTICLE_TYPES.put(ID, new Tuple<>(
-                    PARTICLE_TYPES_REGISTER.register(ID, () -> new SimpleParticleType(false)),
-                    factory));
+            PARTICLE_TYPES.put(ID, PARTICLE_TYPES_REGISTER.register(ID, () -> new SimpleParticleType(false)));
+            PARTICLE_FACTORIES.put(ID, factory);
         }
 
-        public static SimpleParticleType getParticleType(String ID) { return (SimpleParticleType)PARTICLE_TYPES.get(ID).getA().get(); }
+        public static SimpleParticleType getParticleType(String ID) {
+            return (SimpleParticleType)PARTICLE_TYPES.get(ID).orElse(null);
+        }
     }
 
 

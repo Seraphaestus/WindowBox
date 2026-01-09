@@ -50,7 +50,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import static amaryllis.window_box.Registry.ClientOnly.PARTICLE_TYPES;
+import static amaryllis.window_box.Registry.ClientOnly.*;
 import static net.minecraft.client.renderer.Sheets.SIGN_SHEET;
 
 @Mod.EventBusSubscriber(modid = WindowBox.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -108,9 +108,9 @@ public class Client {
 
     @SubscribeEvent
     public static void RegisterParticles(RegisterParticleProvidersEvent event) {
-        PARTICLE_TYPES.forEach((ID, data) ->
-            event.registerSpriteSet((ParticleType<SimpleParticleType>)data.getA().get(), data.getB())
-        );
+        PARTICLE_TYPES.forEach((ID, particle) -> {
+            event.registerSpriteSet((SimpleParticleType)particle.get(), PARTICLE_FACTORIES.get(ID));
+        });
     }
 
    //region Wand HUD
