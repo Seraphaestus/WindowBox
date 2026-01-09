@@ -2,16 +2,9 @@ package amaryllis.window_box;
 
 import amaryllis.window_box.flower.functional.Dispelagonium;
 import amaryllis.window_box.flower.functional.GloryIncarnata;
-import amaryllis.window_box.flower.functional.Groundberry;
 import amaryllis.window_box.flower.functional.Snapdresson;
-import amaryllis.window_box.item.GrassRod;
-import amaryllis.window_box.item.Potions;
-import amaryllis.window_box.tree.SpecialSapling;
 import com.mojang.logging.LogUtils;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -20,12 +13,6 @@ import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-import vazkii.botania.api.BotaniaForgeCapabilities;
-import vazkii.botania.common.item.BotaniaItems;
-import vazkii.botania.common.item.rod.LandsRodItem;
-import vazkii.botania.forge.CapabilityUtil;
-
-import static vazkii.botania.common.lib.ResourceLocationHelper.prefix;
 
 @Mod(WindowBox.MOD_ID)
 @Mod.EventBusSubscriber(modid = WindowBox.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)

@@ -414,7 +414,6 @@ public class Snapdresson extends SpecialFlowerBlockEntity implements Nameable {
             if (loadout == null) loadout = new TreeMap<>(Snapdresson::SlotComparator);
             else loadout.clear();
 
-            WindowBox.LOGGER.info("Reading loadout from nbt");
             var tag_loadout = tag.getCompound(TAG_LOADOUT);
             for (String slotType: tag_loadout.getAllKeys()) {
                 var tag_stacks = tag_loadout.getList(slotType, Tag.TAG_COMPOUND);
@@ -424,7 +423,6 @@ public class Snapdresson extends SpecialFlowerBlockEntity implements Nameable {
                 }
                 loadout.put(slotType, stacks);
             }
-            WindowBox.LOGGER.info("Loaded loadout: {} -> {}", tag_loadout, loadout);
         } else {
             loadout = null;
         }
